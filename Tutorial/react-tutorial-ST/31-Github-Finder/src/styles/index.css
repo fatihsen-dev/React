@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+lottie-player {
+  width: 300px;
+}
+* {
+  color: #fff;
+}
+nav > .active {
+  color: red;
+  transition: 0.15s;
+}
+.repostContainer::-webkit-scrollbar {
+  width: 10px;
+}
+.repostContainer::-webkit-scrollbar-track {
+  background-color: #243a54;
+}
+
+.repostContainer::-webkit-scrollbar-thumb {
+  background: rgb(13, 26, 41);
+  border-radius: 2px;
+}
+.repostContainer::-webkit-scrollbar-thumb:hover {
+  background: rgb(13, 25, 38);
+}
+th,
+td {
+  text-align: start;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+th:not(:last-of-type),
+td:not(:last-of-type) {
+  padding: 0 4px;
+}
+th:last-of-type,
+td:last-of-type {
+  justify-content: center;
+}
+tr {
+  display: grid;
+  grid-template-columns: 0.44fr 1fr 3fr 0.24fr;
+  gap: 2px;
+}
