@@ -12,9 +12,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Routes>
       <Route path='/' element={<App />} />
       <Route path='expenses' element={<Expenses />} />
-      <Route path='invoices' element={<Invoices />} />
 
       <Route path='invoices' element={<Invoices />}>
+        <Route
+          index
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>Select an invoice</p>
+            </main>
+          }
+        />
         <Route path=':invoiceId' element={<Invoice />} />
       </Route>
 
