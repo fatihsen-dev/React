@@ -1,30 +1,21 @@
 import { useReducer } from "react";
-
-const initialState = {
-  sayi: 0,
-};
-
-const reducerFn = (prevState, action) => {
-  switch (action.type) {
-    case "arttir":
-      return { sayi: prevState.sayi + 1 };
-    case "azalt":
-      return { sayi: prevState.sayi - 1 };
-    default:
-      return {
-        sayi: prevState,
-      };
-  }
-};
+import Form from "./components/Form";
+import reduceFn from "./components/Reducer";
+import Todos from "./components/Todos";
+import ClearBtn from "./components/ClearBtn";
 
 function App() {
-  const [state, dispatch] = useReducer(reducerFn, initialState);
+  const [state, dispatch] = useReducer(reduceFn, {
+    todos: [],
+    todo: "",
+  });
+
   return (
     <div className='app'>
       <div className='ctnr'>
-        <button onClick={() => dispatch({ type: "azalt" })}>-</button>
-        <h1>{state.sayi}</h1>
-        <button onClick={() => dispatch({ type: "arttir" })}>+</button>
+        <Form state={state} dispatch={dispatch} />
+        <Todos state={state} />
+        {state.todos.length > 0 && <ClearBtn dispatch={dispatch} />}
       </div>
     </div>
   );
