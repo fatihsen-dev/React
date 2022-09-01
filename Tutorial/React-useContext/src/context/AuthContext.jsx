@@ -16,6 +16,6 @@ const Provider = ({ children }) => {
   return <Context.Provider value={data}>{children}</Context.Provider>;
 };
 
-export const useSite = () => useContext(Context);
+export const useAuth = () => useContext(Context);
 
 export default Provider;
