@@ -1,12 +1,13 @@
 import { createContext, useContext, useReducer } from "react";
-import siteReducer from "../reducer/siteReducer";
+import { authReducer } from "../reducer/";
 
 const Context = createContext();
 
 const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(siteReducer, {
-    theme: "light",
-    language: "tr",
+  const [state, dispatch] = useReducer(authReducer, {
+    user: localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user"))
+      : false,
   });
 
   const data = {

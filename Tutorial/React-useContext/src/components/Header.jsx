@@ -1,19 +1,24 @@
 import React from "react";
 import SwitchTheme from "./SwitchTheme";
 import Switchlanguage from "./Switchlanguage";
-import { useAuth } from "../context";
+import { useAuth } from "../context/";
 
 function Header() {
-  const { user, setUser } = useAuth();
+  const { user, dispatch } = useAuth();
 
-  const login = () => {
-    setUser({
-      name: "Fatih",
-      id: 1,
+  const login = (e) => {
+    dispatch({
+      type: "LOGIN",
+      payload: {
+        name: "Fatih",
+        id: 1,
+      },
     });
   };
   const logout = () => {
-    setUser(false);
+    dispatch({
+      type: "LOGOUT",
+    });
   };
 
   return (

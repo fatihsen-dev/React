@@ -1,12 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
-import siteReducer from "../reducer/siteReducer";
+import { siteReducer } from "../reducer";
 
 const Context = createContext();
 
 const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(siteReducer, {
-    theme: "light",
-    language: "tr",
+    theme: localStorage.getItem("theme") || "light",
+    language: localStorage.getItem("language") || "tr",
   });
 
   const data = {
