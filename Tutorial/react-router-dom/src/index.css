@@ -26,13 +26,18 @@ body,
   display: inline-flex;
   gap: 4px;
   margin-bottom: 20px;
+  width: 100%;
+  justify-content: space-between;
 }
-.main-navbar > a {
+.main-navbar a {
   color: #222;
   padding: 4px 10px;
   border-radius: 2px;
   transition: 0.15s;
   font-weight: 500;
+}
+.main-navbar > div {
+  display: flex;
 }
 .navbar {
   display: inline-flex;
