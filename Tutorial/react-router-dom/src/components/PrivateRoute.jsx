@@ -9,6 +9,7 @@ export default function PrivateRoute({ children }) {
     return (
       <Navigate
         to='/auth/login'
+        replace={true}
         state={{
           return_url: location.pathname,
         }}
